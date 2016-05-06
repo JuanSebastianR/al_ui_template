@@ -1,7 +1,9 @@
 <div class="awesome-search-results">
 	<div class="container">
 		<div ng-repeat="result in resultList" 
-		class="col-xs-3">
+		class="col-xs-3" 
+		ng-class="{'bueno': (result.popularity > 2.5) , 'malo': (result.popularity < 2.5)}"
+		>
 			<a href="#{{result.id}}" data-toggle="modal" data-target="#{{result.id}}" ng-click="setCurrentMovie(result.id)">
 			<img ng-src="{{result.foto}}" title="{{result.title}} as {{result.character}}" width="65" height="97" ng-if="result.foto" />
 			</a>
